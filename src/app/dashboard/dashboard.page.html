@@ -1,34 +1,60 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Dashboard
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content no-border>
-    <ion-card class="welcome-card" no-margin>
-      <ion-card-content class="affirmation">
-        <p>I'm smart!</p>
+<div class="content">
+    <ion-card class="affirmation-card" no-margin no-border>
+      <ion-card-content class="affirmation-text">
+        <p  class="priority-text">I'm smart! I'm beautifull!</p>
       </ion-card-content>
     </ion-card>
+
    <div class="priority-slide">
-      <ion-card-content class="priority-card" no-padding>
+     <ion-card class="priority-card">
+      <ion-card-content no-padding>
         <p class="priority-number">1</p>
-        <p>first priority</p>
-      </ion-card-content >
-      <ion-card-content class="priority-card"  no-padding>
+        <p class="priority-text">first priority</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="priority-card">
+      <ion-card-content no-padding>
         <p class="priority-number">2</p>
-        <p>Second priority</p>
+        <p class="priority-text">first priority</p>
       </ion-card-content>
-      <ion-card-content class="priority-card"  no-padding>
-      <p class="priority-number">3</p>
-        <p>Third priority</p>
+    </ion-card>
+    <ion-card class="priority-card">
+      <ion-card-content no-padding>
+        <p class="priority-number">2</p>
+        <p class="priority-text">first priority</p>
       </ion-card-content>
-      <ion-card-content class="priority-card"  no-padding>
-      <p class="priority-number">4</p>
-        <p>Fouth priority</p>
-      </ion-card-content>
+    </ion-card>
    </div>
 
+  <ion-card class="done-task-list">
+    <ion-list no-padding>
+      <ion-list-header class="done-task-title">
+        <ion-label>Completes tasks</ion-label>
+        <div class="pie">
+          <div class="slice-right"></div>
+          <div class="slice-left"></div>
+          <div class="percent">
+            <div class="number">75%</div>
+          </div>
+        </div>
+      </ion-list-header>
+      <ion-item no-padding>Item 1</ion-item>
+      <ion-item no-padding>Item 2</ion-item>
+      <ion-item no-padding>Item 3</ion-item>
+      <ion-item no-padding>Item 4</ion-item>
+      <ion-item no-padding>Item 5</ion-item>
+      <ion-item no-padding>Item 4</ion-item>
+      <ion-item no-padding>Item 5</ion-item>
+    </ion-list>
+</ion-card>
+
+  <ion-card class="end-day-review">
+      <ion-card-content no-padding>
+        <ion-button color="primary">Start end-day review</ion-button>
+      </ion-card-content >
+  </ion-card>
+
+
+</div>
 </ion-content>
