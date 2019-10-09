@@ -1,5 +1,4 @@
-<ion-content no-border>
-<div class="content">
+<ion-content no-border color="light">
     <ion-card class="affirmation-card" no-margin no-border>
       <ion-card-content class="affirmation-text">
         <p  class="priority-text">talk to my boss</p>
@@ -27,41 +26,40 @@
     </ion-card>
    </div>
 
-  <ion-card class="task-list">
-    <ion-list no-padding>
-      <ion-list-header class="task-title">
-        <ion-label>Completes tasks</ion-label>
-        <div class="pie">
-          <div class="slice-right"></div>
-          <div class="slice-left"></div>
-          <div class="percent">
-            <div class="number">75%</div>
-          </div>
-        </div>
-      </ion-list-header>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-    </ion-list>
-</ion-card>
+  <h3>completed task</h3>
+  <ion-list lines="none" class="task-list">
+    <ion-item class="task">
+      <ion-label>Pokémon Yellow</ion-label>
+      <ion-checkbox slot="end" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>Mega Man X</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>The Legend of Zelda</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>Pac-Man</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>Super Mario World</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+  </ion-list>
 
 
-
-  <ion-card class="end-day-review">
+  <ion-card id="morning-review">
       <ion-card-content no-padding>
-        <ion-button color="primary">Start end-day review</ion-button>
+        <ion-button color="primary">Fill your Morning review</ion-button>
       </ion-card-content >
   </ion-card>
 
-
-</div>
+  <ion-card id="end-day-review">
+      <ion-card-content no-padding>
+        <ion-button color="primary">Fill your end-day review</ion-button>
+      </ion-card-content >
+  </ion-card>
 </ion-content>

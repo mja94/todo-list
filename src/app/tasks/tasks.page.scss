@@ -1,9 +1,16 @@
 
 .task-list {
-    padding: 0.5em 1em;
-    margin-top: 0px !important;
-  
-    .task-title {
-      text-align: center;
-    }
+  .priority-rank{
+    background:var( --ion-color-light-shade);
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2em;
+    margin-right: 1em;
+
+  }
 }
+
+
+

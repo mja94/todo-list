@@ -1,51 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tasks
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-
-<ion-card class="task-list">
-  <ion-list no-padding>
-      <ion-list-header class="task-title">
-        <ion-label>Priority</ion-label>
-      </ion-list-header>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
+<ion-content class="content" padding="true">
+  <h3>Priorities</h3>
+  <ion-list lines="none" class="task-list" id="tasks-priorities">
+    <ion-item class="task">
+      <span class="priority-rank">1</span>
+      <ion-label>Pokémon Yellow</ion-label>
+      <ion-checkbox slot="end" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <span class="priority-rank">2</span>
+      <ion-label>Mega Man X</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <span class="priority-rank">3</span>
+      <ion-label>The Legend of Zelda</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
   </ion-list>
-</ion-card>
-
-<ion-card class="task-list">
-  <ion-list no-padding>
-      <ion-list-header class="task-title">
-        <ion-label>Priority</ion-label>
-      </ion-list-header>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
-      <ion-item no-padding>
-          <ion-label>Item 1</ion-label>
-          <ion-checkbox slot="end" checked="true"></ion-checkbox>
-      </ion-item>
+  
+  <h3>completed task</h3>
+  <ion-list lines="none" class="task-list" id="tasks">
+    <ion-item class="task">
+      <ion-label>Pokémon Yellow</ion-label>
+      <ion-checkbox slot="end" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>Mega Man X</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>The Legend of Zelda</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>Pac-Man</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
+    <ion-item class="task">
+      <ion-label>Super Mario World</ion-label>
+      <ion-checkbox slot="end" checked="false"></ion-checkbox>
+    </ion-item>
   </ion-list>
-</ion-card>
-
 </ion-content>
