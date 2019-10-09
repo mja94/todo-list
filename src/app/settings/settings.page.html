@@ -6,17 +6,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
-  <ion-list>
-  <ion-item>
-    <ion-label>Notification</ion-label>
-    <ion-toggle disabled="true"></ion-toggle>
-  </ion-item>
+<ion-content padding="true" color="light">
+  <h3>
+    <ion-icon name="person"></ion-icon>
+    <ion-label>Profile</ion-label>
+  </h3>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <p>Monica Ayala</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>E-mail</ion-label>
+      <p>mj_ayala@live.ca</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <p>************</p>
+    </ion-item>
+  </ion-list>
 
-  <ion-item>
-    <ion-label>Mushrooms</ion-label>
-    <ion-toggle [(ngModel)]="mushrooms"></ion-toggle>
-  </ion-item>
-</ion-list>
+  <h3><ion-icon name="notifications"></ion-icon>Configuration</h3>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label>Notification</ion-label>
+      <ion-toggle [(ngModel)]="mushrooms"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Morning review</ion-label>
+      <ion-datetime displayFormat="HH:mm A"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>End-day review</ion-label>
+      <ion-datetime displayFormat="HH:mm A"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  
+    <div class="logout-btn">
+     <ion-button color="primary"><ion-icon name="exit"></ion-icon>Logout</ion-button>
+    </div>
 </ion-content>

@@ -1,164 +1,33 @@
+:host {
+  ion-label {
+    text-decoration: line-through;
+  }
 
-ion-card {
-  background-color: white;
-}
-
-.affirmation-card {
-  padding: 2em 0;
-  background: #3a7bd5;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #3a6073, #3a7bd5);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #3a6073, #3a7bd5);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  box-shadow: none !important;
-  border-radius: 0px !important;
-  color: white;
-
-  .affirmation-text p {
-    font-size: 1.5em;
+  .card-slide {
+    overflow-y: hidden;
+    white-space: nowrap;
     text-align: center;
-    font-family: 'Gloria Hallelujah', cursive;
-  }
-}
 
-.priority-slide {
-  overflow-y: hidden;
-  white-space: nowrap;
-  text-align: center;
+    .card {
+      display: inline-block;
+      margin: 0.5em;
+    }
 
-  .priority-card {
-    display: inline-block;
-    margin: 0.5em;
+    p {
+      display: inline-block;
+      padding: 1em;
+    }
   }
 
-  .priority-number {
-    font-size: 1em;
-    background: yellow;
-  }
-
-  p {
-    display: inline-block;
-    padding: 1em;
-  }
-}
-
-.priority-slide::-webkit-scrollbar {
-  display: none;
-}
-
-.task-list {
-  padding: 0.5em 1em;
-  margin-top: 0px !important;
-
-  .task-title {
-    text-align: center;
+  .card-slide::-webkit-scrollbar {
+    display: none;
   }
 
   //https://codepen.io/tcmulder/pen/qHIJp
-  .pie {
-    display: inline-block;
-    position: relative;
-    width: 1em;
-    height: 1em;
-    background-color: var(--ion-color-light-shade);
-    font-size: 3em;
+
+  .review {
     text-align: center;
-    border-radius: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
-
-  .slice-right {
-    position: absolute;
-    z-index: 11;
-    background-color: var(--ion-color-primary);
-    width: 100%;
-    height: 100%;
-    clip: rect(0, .5em, .5em, .5em);
-    border-radius: 50%;
-  }
-
-  .slice-left {
-    position: absolute;
-    z-index: 11;
-    background-color: var(--ion-color-primary);
-    width: 100%;
-    height: 100%;
-    clip: rect(.5em, .5em, 1em, .5em);
-    border-radius: 50%;
-  }
-
-  .percent {
-    position: absolute;
-    z-index: 20;
-    top: 3px;
-    right: 3px;
-    bottom: 3px;
-    left: 3px;
-    background: white;
-    border-radius: 50%;
-  }
-
-  .number {
-    position: absolute;
-    z-index: 30;
-    width: 100%;
-    height: 100%;
-    padding-top: 50%;
-    line-height: 0;
-    font-size: .3em;
-    color: var(--ion-color-medium-shade);
-  }
-
-  $animation-speed: .3s;
-
-  .slice-right {
-    -webkit-animation-delay: $animation-speed * 4;
-    -webkit-animation-duration: $animation-speed;
-    -webkit-animation-name: right-slice;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode: forwards;
-  }
-
-  .slice-left {
-    -webkit-animation-delay: $animation-speed * 5;
-    -webkit-animation-duration: $animation-speed;
-    -webkit-animation-name: left-slice;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-out;
-    -webkit-animation-fill-mode: forwards;
-  }
-
-  @-webkit-keyframes right-slice {
-    from {
-      clip: rect(0, 50%, .5em, .5em);
-    }
-
-    50% {
-      clip: rect(0, 1em, .5em, .5em);
-    }
-
-    to {
-      clip: rect(0, 1em, 1em, .5em);
-    }
-  }
-
-  @-webkit-keyframes left-slice {
-    from {
-      clip: rect(.5em, .5em, 1em, .5em);
-    }
-
-    50% {
-      clip: rect(.5em, .5em, 1em, 0)
-    }
-
-    to {
-      clip: rect(.3em, .5em, 1em, 0);
-    }
-  }
-}
-
-.end-day-review {
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
 }
