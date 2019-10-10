@@ -6,7 +6,8 @@
         color: white;
         font-size: 2em;
         padding: 1em 0;
-        text-transform: uppercase
+        text-transform: uppercase;
+        font-weight: 900;
     }
 
     input {
@@ -25,6 +26,13 @@
         margin: 1em 0;
     }
 
+    ion-card-subtitle {
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--ion-color-medium-tint) !important;
+        font-size: 0.8em;
+    }
+
     .priority-rank {
         padding: 1em;
     }
@@ -32,6 +40,7 @@
     .card-question [disabled] {
         pointer-events: none;
         opacity: 0.7;
+
     }
 
     .add-btn {
