@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController} from '@ionic/angular';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class DashboardPage {
 
-  constructor() {}
+  constructor( public navCtrl: NavController) {
+
+  }
+
+  openMorningReviewPage() {
+    this.navCtrl.navigateForward('/morning-review');
+  }
 
 }
