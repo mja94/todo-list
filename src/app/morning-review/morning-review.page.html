@@ -1,35 +1,64 @@
-<app-header></app-header>
+<ion-content color="primary">
+    <div class="header-review">
+        Morning Review
+    </div>
 
-<ion-content>
-    <ion-slides pager="true">
-        <ion-slide class="slide">
-            <ion-row>
-                <h1>DID YOU KNOW: repeating a positive affirmation over and over has the ability to reprogram your mind
-                    into believing it</h1>
-                <h1> What is your affirmation today?</h1>
-            </ion-row>
-            <ion-row>
-                <input type="text" id="fname" name="fname">
-            </ion-row>
-        </ion-slide>
+    <div id="cards-wrapper">
+        <ion-card class="question-card" color="light">
+            <ion-card-header>
+                <ion-card-subtitle>Believe in you</ion-card-subtitle>
+                <ion-card-title>What is your affirmation for today?</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <input type="text">
+            </ion-card-content>
+        </ion-card>
 
-        <ion-slide class="slide">
-            <h1>Sometime we forget about what we have. What are you gratefull for?</h1>
-            <input type="text" id="fname" name="fname">
-        </ion-slide>
+        <ion-card class="question-card" color="light">
+            <ion-card-header>
+                <ion-card-subtitle>Be gratefull</ion-card-subtitle>
+                <ion-card-title>What are you gratefull for?</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <input type="text">
+                <ion-button class="add-btn" color="light">
+                    <ion-icon name="add"></ion-icon> Add another gratefull thought
+                </ion-button>
+            </ion-card-content>
+        </ion-card>
 
-        <ion-slide class="slide">
-            <h1>Whats are you priorities today?</h1>
-            <ion-input></ion-input>
-            <ion-input></ion-input>
-            <ion-input></ion-input>
-        </ion-slide>
+        <ion-card class="question-card" color="light">
+            <ion-card-header>
+                <ion-card-subtitle>Set your goals</ion-card-subtitle>
+                <ion-card-title>What are you priorities today?</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <ion-button class="add-btn" color="light">
+                    <ion-icon name="add"></ion-icon> Add another goal
+                </ion-button>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="question-card" color="light">
+            <ion-card-header>
+                <ion-card-subtitle>Take small steps</ion-card-subtitle>
+                <ion-card-title>Whats are the task that you have to accomplish today?</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <ion-button class="add-btn" color="light">
+                    <ion-icon name="add"></ion-icon> Add another task
+                </ion-button>
+            </ion-card-content>
 
-        <ion-slide class="slide">
-            <h1>Whats are the task that you have to accomplish today?</h1>
-            <ion-input></ion-input>
-            <ion-input></ion-input>
-            <ion-input></ion-input>
-        </ion-slide>
-    </ion-slides>
+        </ion-card>
+
+        <div>
+            <h1 class="questions">You are all done!</h1>
+        </div>
+    </div>
 </ion-content>
