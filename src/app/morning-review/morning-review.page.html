@@ -1,0 +1,106 @@
+<ion-content color="primary">
+    <ion-header>
+        <ion-toolbar>
+            <ion-icon name="arrow-back" (click)="goBack()" class="inline"></ion-icon>
+            <ion-title class="inline">
+                Morning Review
+            </ion-title>
+        </ion-toolbar>
+
+    </ion-header>
+
+    <ion-card class="question-card" color="light" [class.disable]="isDisabledAffirmation">
+        <ion-card-header>
+            <ion-card-subtitle>Believe in you</ion-card-subtitle>
+            <ion-card-title>What is your affirmation for today?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item *ngIf="affirmation" class="add-item" lines="none">
+                <ion-label>{{affirmation}}</ion-label>
+                <ion-button color="danger" fill="outline" (click)="deleteAffirmation()">
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item class="add-item">
+                <ion-input type="text" placeholder="Add an affirmation" name="affirmation" (ionFocus)="change($event)">
+                </ion-input>
+                <ion-button class="add-btn" (click)="addItem()">
+                    Add
+                </ion-button>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="question-card" color="light" [class.disable]="isDisabledGrateful">
+        <ion-card-header>
+            <ion-card-subtitle>Be grateful</ion-card-subtitle>
+            <ion-card-title>What are you grateful for?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item *ngFor="let todo of gratefulList; let i = index">
+                <ion-label>{{todo}}</ion-label>
+                <ion-button color="danger" fill="outline" (click)="deleteGrateful(i)">
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item class="add-item">
+                <ion-input type="text" placeholder="Add a grateful though" name="grateful" (ionFocus)="change($event)">
+                </ion-input>
+                <ion-button class="add-btn" (click)="addItem()">
+                    Add
+                </ion-button>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="question-card" color="light" [class.disable]="isDisabledGoal">
+        <ion-card-header>
+            <ion-card-subtitle>Set your goals</ion-card-subtitle>
+            <ion-card-title>What are you priorities today?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item *ngFor="let todo of goalList; let i = index">
+                <ion-label>{{todo}}</ion-label>
+                <ion-button color="danger" fill="outline" (click)="deleteGoal(i)">
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item class="add-item">
+                <ion-input type="text" placeholder="Add a goal" name="goal" (ionFocus)="change($event)">
+                </ion-input>
+                <ion-button class="add-btn" (click)="addItem()">
+                    Add
+                </ion-button>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="question-card" color="light" [class.disable]="isDisabledTask">
+        <ion-card-header>
+            <ion-card-subtitle>Take small steps</ion-card-subtitle>
+            <ion-card-title>Whats are the task that you have to accomplish today?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item *ngFor="let todo of taskList; let i = index">
+                <ion-label>{{todo}}</ion-label>
+                <ion-button color="danger" fill="outline" (click)="deleteTask(i)">
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item class="add-item">
+                <ion-input type="text" placeholder="Add a task" name="task" (ionFocus)="change($event)">
+                </ion-input>
+                <ion-button class="add-btn" (click)="addItem()">
+                    Add
+                </ion-button>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <div class="footer">
+        <ion-button (click)="validate()" color="light" fill="outline">
+            Confirm<ion-icon name="checkmark-circle"></ion-icon>
+        </ion-button>
+    </div>
+
+
+</ion-content>

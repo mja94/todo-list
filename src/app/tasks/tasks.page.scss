@@ -1,0 +1,16 @@
+
+:host{
+  .task-list {
+    .priority-rank{
+      background:var(--ion-color-light-shade);
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 2em;
+      margin-right: 1em;
+    }
+  }
+}
+
+

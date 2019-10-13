@@ -1,0 +1,33 @@
+:host {
+  ion-label {
+    text-decoration: line-through;
+  }
+
+  .card-slide {
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-align: center;
+
+    .card {
+      display: inline-block;
+      margin: 0.5em;
+    }
+
+    p {
+      display: inline-block;
+      padding: 1em;
+    }
+  }
+
+  .card-slide::-webkit-scrollbar {
+    display: none;
+  }
+
+  //https://codepen.io/tcmulder/pen/qHIJp
+
+  .review {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
