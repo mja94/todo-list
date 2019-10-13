@@ -18,14 +18,14 @@
             <ion-item *ngIf="affirmation" class="add-item" lines="none">
                 <ion-label>{{affirmation}}</ion-label>
                 <ion-button color="danger" fill="outline" (click)="deleteAffirmation()">
-                    <ion-icon name="trash"></ion-icon>
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
                 </ion-button>
             </ion-item>
             <ion-item class="add-item">
                 <ion-input type="text" placeholder="Add an affirmation" name="affirmation" (ionFocus)="change($event)">
                 </ion-input>
                 <ion-button class="add-btn" (click)="addItem()">
-                    Add
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
                 </ion-button>
             </ion-item>
         </ion-card-content>
@@ -40,14 +40,14 @@
             <ion-item *ngFor="let todo of gratefulList; let i = index">
                 <ion-label>{{todo}}</ion-label>
                 <ion-button color="danger" fill="outline" (click)="deleteGrateful(i)">
-                    <ion-icon name="trash"></ion-icon>
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
                 </ion-button>
             </ion-item>
             <ion-item class="add-item">
                 <ion-input type="text" placeholder="Add a grateful though" name="grateful" (ionFocus)="change($event)">
                 </ion-input>
                 <ion-button class="add-btn" (click)="addItem()">
-                    Add
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
                 </ion-button>
             </ion-item>
         </ion-card-content>
@@ -62,14 +62,14 @@
             <ion-item *ngFor="let todo of goalList; let i = index">
                 <ion-label>{{todo}}</ion-label>
                 <ion-button color="danger" fill="outline" (click)="deleteGoal(i)">
-                    <ion-icon name="trash"></ion-icon>
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
                 </ion-button>
             </ion-item>
             <ion-item class="add-item">
                 <ion-input type="text" placeholder="Add a goal" name="goal" (ionFocus)="change($event)">
                 </ion-input>
                 <ion-button class="add-btn" (click)="addItem()">
-                    Add
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
                 </ion-button>
             </ion-item>
         </ion-card-content>
@@ -84,14 +84,14 @@
             <ion-item *ngFor="let todo of taskList; let i = index">
                 <ion-label>{{todo}}</ion-label>
                 <ion-button color="danger" fill="outline" (click)="deleteTask(i)">
-                    <ion-icon name="trash"></ion-icon>
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
                 </ion-button>
             </ion-item>
             <ion-item class="add-item">
                 <ion-input type="text" placeholder="Add a task" name="task" (ionFocus)="change($event)">
                 </ion-input>
                 <ion-button class="add-btn" (click)="addItem()">
-                    Add
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
                 </ion-button>
             </ion-item>
         </ion-card-content>
