@@ -1,57 +1,31 @@
-<app-header></app-header>
+<app-header [affirmation]="morningData.affirmation"></app-header>
 
 <ion-content padding="true">
-    <h3>I am gratefull for ...</h3>
+    <h3>I am grateful for ...</h3>
     <div class="card-slide">
-        <ion-card class="card">
+        <ion-card class="card" *ngFor="let  item of morningData.grateful; let i = index">
             <ion-card-content>
-                <p class="card-text">finish my homework</p>
-            </ion-card-content>
-        </ion-card>
-        <ion-card class="card">
-            <ion-card-content>
-                <p class="card-text">drink a lot of water</p>
-            </ion-card-content>
-        </ion-card>
-        <ion-card class="card">
-            <ion-card-content>
-                <p class="card-text">go buy a new dress go buy a new dress</p>
+                <p class="card-text">{{item}}</p>
             </ion-card-content>
         </ion-card>
     </div>
 
-    <h3>completed task</h3>
+    <h3>completed tasks</h3>
     <ion-list lines="none" class="task-list" id="completed-task-list">
         <ion-item class="task">
             <ion-label>Pokémon Yellow</ion-label>
             <ion-checkbox slot="end" checked="true"></ion-checkbox>
         </ion-item>
-        <ion-item class="task">
-            <ion-label>Mega Man X</ion-label>
-            <ion-checkbox slot="end" checked="false"></ion-checkbox>
-        </ion-item>
-        <ion-item class="task">
-            <ion-label>The Legend of Zelda</ion-label>
-            <ion-checkbox slot="end" checked="false"></ion-checkbox>
-        </ion-item>
-        <ion-item class="task">
-            <ion-label>Pac-Man</ion-label>
-            <ion-checkbox slot="end" checked="false"></ion-checkbox>
-        </ion-item>
-        <ion-item class="task">
-            <ion-label>Super Mario World</ion-label>
-            <ion-checkbox slot="end" checked="false"></ion-checkbox>
-        </ion-item>
     </ion-list>
 
 
-    <ion-card class="review">
+    <ion-card class="review" *ngIf="showMorningBtn">
         <ion-card-content>
             <ion-button color="primary" (click)="openMorningReviewPage()">Fill your morning routine</ion-button>
         </ion-card-content>
     </ion-card>
 
-    <ion-card class="review">
+    <ion-card class="review" *ngIf="showEndDayBtn">
         <ion-card-content>
             <ion-button color="primary">Fill your end-day review</ion-button>
         </ion-card-content>

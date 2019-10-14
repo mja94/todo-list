@@ -8,7 +8,9 @@ const routes: Routes = [
   },
   { path: 'morning-review', loadChildren: './morning-review/morning-review.module#MorningReviewPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'tasks', loadChildren: './tasks/tasks.module#TasksPageModule' },
 
 ];
 @NgModule({

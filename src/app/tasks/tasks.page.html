@@ -1,45 +1,19 @@
-<app-header></app-header>
+<app-header [affirmation]="todo.affirmation"></app-header>
 
 <ion-content class="content" padding="true">
-  <h3>priorities</h3>
+  <h3>Goals</h3>
   <ion-list lines="none" class="task-list" id="tasks-priorities">
-    <ion-item class="task">
-      <span class="priority-rank">1</span>
-      <ion-label>Pokémon Yellow</ion-label>
-      <ion-checkbox slot="end" checked="true"></ion-checkbox>
-    </ion-item>
-    <ion-item class="task">
-      <span class="priority-rank">2</span>
-      <ion-label>Mega Man X</ion-label>
-      <ion-checkbox slot="end" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item class="task">
-      <span class="priority-rank">3</span>
-      <ion-label>The Legend of Zelda</ion-label>
+    <ion-item class="task" *ngFor="let goal of todo.goals; let i = index">
+      <span class="priority-rank">{{i+1}}</span>
+      <ion-label>{{goal}}</ion-label>
       <ion-checkbox slot="end" checked="false"></ion-checkbox>
     </ion-item>
   </ion-list>
 
   <h3>to do</h3>
   <ion-list lines="none" class="task-list" id="tasks">
-    <ion-item class="task">
-      <ion-label>Pokémon Yellow</ion-label>
-      <ion-checkbox slot="end" checked="true"></ion-checkbox>
-    </ion-item>
-    <ion-item class="task">
-      <ion-label>Mega Man X</ion-label>
-      <ion-checkbox slot="end" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item class="task">
-      <ion-label>The Legend of Zelda</ion-label>
-      <ion-checkbox slot="end" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item class="task">
-      <ion-label>Pac-Man</ion-label>
-      <ion-checkbox slot="end" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item class="task">
-      <ion-label>Super Mario World</ion-label>
+    <ion-item class="task" *ngFor="let task of todo.tasks; let i = index">
+      <ion-label>{{task}}}</ion-label>
       <ion-checkbox slot="end" checked="false"></ion-checkbox>
     </ion-item>
   </ion-list>

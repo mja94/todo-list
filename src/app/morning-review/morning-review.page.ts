@@ -124,6 +124,7 @@ export class MorningReviewPage implements OnInit {
       firebase.firestore().collection('todo').add({
         date: this.user,
         created: firebase.firestore.FieldValue.serverTimestamp(),
+        owner: this.user,
         morning: {
           affirmation: this.affirmation,
           grateful: this.gratefulList,
