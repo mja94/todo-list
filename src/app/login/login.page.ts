@@ -12,12 +12,17 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public toastController: ToastController, public navCtrl: NavController) { }
+  constructor(public toastController: ToastController, public navCtrl: NavController) {
+    firebase.auth().onAuthStateChanged((user) => {
+      // check if the user is already login
+      if (user) {
+        this.navCtrl.navigateForward('/dashboard');
+      }
+    });
+  }
 
   ngOnInit() {
-    firebase.auth().onAuthStateChanged((user) => {
-      console.log(user);
-    });
+
   }
 
   login() {

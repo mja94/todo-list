@@ -13,7 +13,7 @@
     <h1 class="logo-name">Priori</h1>
   </div>
 
-  <div class="signup">
+  <div class="login">
     <ion-list class="inputs">
       <ion-item>
         <ion-label position="stacked">Email</ion-label>
@@ -23,9 +23,8 @@
         <ion-label position="stacked">Password</ion-label>
         <ion-input type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
-
+      <p class="signup">Don't have an account? <a routerLink="/signup">Signup here</a></p>
     </ion-list>
-
     <ion-button expand="block" (click)="login()">Login</ion-button>
   </div>
 

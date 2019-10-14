@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
-
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-morning-review',
@@ -20,8 +20,11 @@ export class MorningReviewPage implements OnInit {
   isDisabledGoal: boolean;
   isDisabledGrateful: boolean;
   isDisabledTask: boolean;
+  user: string;
 
-  constructor(public navCtrl: NavController, public alertController: AlertController) { }
+  constructor(public navCtrl: NavController, public alertController: AlertController) {
+    this.user = firebase.auth().currentUser.uid;
+  }
 
   ngOnInit() {
     this.isDisabledAffirmation = false;
@@ -118,31 +121,42 @@ export class MorningReviewPage implements OnInit {
 
   async validate() {
     if (this.taskList.length > 0 && this.goalList.length > 0 && this.affirmation !== '' && this.affirmation.length > 0) {
-      const alert = await this.alertController.create({
-        header: 'Success!',
-        message: 'Everything has been saved',
-        buttons: [
-          {
-            text: 'Ok',
-            handler: () => {
-              this.navCtrl.navigateBack('dashboard');
+      firebase.firestore().collection('todo').add({
+        date: this.user,
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+        morning: {
+          affirmation: this.affirmation,
+          grateful: this.gratefulList,
+          goals: this.goalList,
+          tasks: this.taskList,
+        }
+      }).then(async (docRef) => {
+        const alert = await this.alertController.create({
+          header: 'Success!',
+          message: 'Everything has been saved',
+          buttons: [
+            {
+              text: 'Ok',
+              handler: () => {
+                this.navCtrl.navigateBack('dashboard');
+              }
             }
-          }
-        ]
-      });
+          ]
+        });
+        await alert.present();
 
-      await alert.present();
-    } else {
-      const alert = await this.alertController.create({
-        header: 'Warning!',
-        message: 'Please make sure to fill everything up',
-        buttons: [
-          {
-            text: 'Ok',
-          }
-        ]
+      }).catch(async (err) => {
+        const alert = await this.alertController.create({
+          header: 'Warning!',
+          message: err,
+          buttons: [
+            {
+              text: 'Ok',
+            }
+          ]
+        });
+        await alert.present();
       });
-      await alert.present();
     }
   }
 }

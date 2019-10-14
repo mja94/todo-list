@@ -4,10 +4,10 @@
     .logo-wrap {
         background-color: var(--ion-color-primary);
         text-align: center;
-        padding: 2em 0;
+        padding: 2em 0 1em 0;
     }
 
-    .signup {
+    .login {
         padding: 0 1em;
     }
 
@@ -32,6 +32,12 @@
             color: var(--ion-color-primary);
             line-height: 0.5em;
         }
+    }
+
+    .signup {
+        text-align: right;
+        margin-top: 10px;
+        font-size: 0.8em;
     }
 
     .inputs {
