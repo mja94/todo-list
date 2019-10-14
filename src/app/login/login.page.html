@@ -6,15 +6,27 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item>
-      <ion-label position="stacked">Email</ion-label>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-button expand="block" (click)="signup()">Signup</ion-button>
+  <div class="logo">
+    <div class="circle">
+      <h2>PRIORI</h2>
+    </div>
+    <h3>Happy & Productive</h3>
+  </div>
+
+  <div class="signup">
+    <ion-list class="inputs">
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" (click)="signup()">Signup</ion-button>
+  </div>
+
+
 </ion-content>
