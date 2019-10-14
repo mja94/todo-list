@@ -21,6 +21,10 @@ firebase.initializeApp({
   measurementId: 'G-8WBRPWWFMY'
 });
 
+firebase.firestore().settings({
+  timestampsInSnapshots: true
+});
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
