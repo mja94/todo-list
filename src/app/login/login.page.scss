@@ -1,7 +1,7 @@
 :host {
     text-align: center;
 
-    .logo {
+    .logo-wrap {
         background-color: var(--ion-color-primary);
         text-align: center;
         padding: 2em 0;
@@ -11,23 +11,27 @@
         padding: 0 1em;
     }
 
-    .circle {
-        width: 7em;
-        height: 7em;
-        border-radius: 50%;
+
+    .logo-name {
+        font-family: 'Arvo', serif;
+        color: white;
+        letter-spacing: 0.2em;
+        margin-top: 5px;
+    }
+
+    .logo {
+        width: 6em;
+        height: 6em;
         margin: 0 auto;
         padding: 0.5em;
         background: white;
 
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 2.5em;
+        h1 {
+            font-family: 'Arvo', serif;
+            font-size: 6em;
+            color: var(--ion-color-primary);
+            line-height: 0.5em;
         }
-    }
-
-    h3 {
-        color: white;
-        font-family: 'Montserrat', sans-serif;
     }
 
     .inputs {
