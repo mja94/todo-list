@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase';
 
@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
   templateUrl: 'dashboard.page.html',
   styleUrls: ['dashboard.page.scss']
 })
-export class DashboardPage implements OnInit {
+export class DashboardPage {
   affirmation: string;
   morningData: any;
   user: string;
@@ -27,8 +27,7 @@ export class DashboardPage implements OnInit {
     this.affirmation = '';
   }
 
-  ngOnInit() {
-    console.log('didload');
+  update() {
     this.getData();
     if (this.morningData.length > 0) {
       console.log('morning', this.morningData.length);
@@ -36,7 +35,6 @@ export class DashboardPage implements OnInit {
     } else {
       this.showMorningBtn = true;
     }
-    this.changeRef.detectChanges();
   }
 
   openMorningReviewPage() {
