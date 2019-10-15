@@ -108,7 +108,7 @@ export class MorningReviewPage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.navCtrl.navigateBack('dashboard');
+            this.navCtrl.navigateBack('tabs/dashboard');
           }
         },
         {
@@ -140,7 +140,7 @@ export class MorningReviewPage implements OnInit {
             {
               text: 'Ok',
               handler: () => {
-                this.navCtrl.navigateBack('dashboard');
+                this.navCtrl.navigateBack('tabs/dashboard');
               }
             }
           ]

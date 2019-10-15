@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
     firebase.auth().onAuthStateChanged((user) => {
       // check if the user is already login
       if (user) {
-        this.navCtrl.navigateForward('/dashboard');
+        this.navCtrl.navigateForward('tabs/dashboard');
       }
     });
   }
@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
   login() {
     firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       .then((data) => {
-        this.navCtrl.navigateForward('/dashboard');
+        this.navCtrl.navigateForward('tabs/dashboard');
       }).catch(async (err) => {
         const toast = await this.toastController.create({
           message: 'The email address and / or password is invalid.',

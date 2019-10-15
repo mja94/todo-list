@@ -23,7 +23,8 @@ export class TasksPage {
       .get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.todo = doc.data().morning;
-          this.affirmation = this.todo.affirmation;
+          this.affirmation = this.
+            todo.affirmation;
           console.log('todo', this.todo);
         });
       })
@@ -33,7 +34,7 @@ export class TasksPage {
   }
 
   onCheck(document: firebase.firestore.QueryDocumentSnapshot) {
-    console.log('document', document);
+    console.log('document', document.id);
     firebase.firestore().collection('todo').doc(document.id).set({
       completed: 'true'
     }, {

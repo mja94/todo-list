@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase';
-
-
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'dashboard.page.html',
   styleUrls: ['dashboard.page.scss']
 })
-export class DashboardPage {
+export class DashboardPage implements OnInit {
   affirmation: string;
   morningData: any;
   user: string;
@@ -22,15 +20,13 @@ export class DashboardPage {
   progress: number;
   gratefulArr: [];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, ) {
     this.user = firebase.auth().currentUser.uid;
-    this.affirmation = '';
   }
-
-  update() {
+  async ngOnInit() {
+    this.affirmation = '';
     this.getData();
     if (this.morningData.length > 0) {
-      console.log('morning', this.morningData.length);
       this.showMorningBtn = false;
     } else {
       this.showMorningBtn = true;
@@ -38,10 +34,11 @@ export class DashboardPage {
   }
 
   openMorningReviewPage() {
-    this.navCtrl.navigateForward('morning-review');
+    this.navCtrl.navigateForward('tabs/morning-review');
   }
 
   getData() {
+
     this.morningData = firebase.firestore().collection('todo')
       .where('owner', '==', this.user).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
