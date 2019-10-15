@@ -39,10 +39,12 @@ export class MorningReviewPage implements OnInit {
       const item = this.focusInput.value;
       if (item.length && item.trim() !== '') {
         if (this.focusInput.name === 'task') {
-          this.taskList.push(item);
+          const task = { description: item, completed: false };
+          this.taskList.push(task);
         }
         if (this.focusInput.name === 'goal') {
-          this.goalList.push(item);
+          const goal = { description: item, completed: false };
+          this.goalList.push(goal);
         }
         if (this.focusInput.name === 'grateful') {
           this.gratefulList.push(item);

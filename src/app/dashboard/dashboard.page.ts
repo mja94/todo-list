@@ -13,7 +13,12 @@ export class DashboardPage {
   morningData: any;
   user: string;
   showMorningBtn: boolean;
-  showEndDayBtn: true;
+  showEndDayBtn = true;
+  totalGoals: number;
+  totalTasks: number;
+  countCompletedTasks: number;
+  countCompletedGoals: number;
+  progress: number;
 
   constructor(public navCtrl: NavController) {
     // this.user = firebase.auth().currentUser.uid;
@@ -21,7 +26,6 @@ export class DashboardPage {
     this.getData();
     if (this.morningData) {
       this.showMorningBtn = false;
-      this.affirmation = this.morningData.affirmation;
     } else {
       this.showMorningBtn = true;
     }
@@ -36,7 +40,13 @@ export class DashboardPage {
       .where('owner', '==', 'o3zeTfQjlSephIBEVZxlYFx1G6l1').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.morningData = doc.data().morning;
-          console.log('todo', this.morningData);
+          this.affirmation = this.morningData.affirmation;
+          this.totalGoals = this.morningData.goals.length;
+          this.totalTasks = this.morningData.tasks.length;
+          this.countCompletedTasks = this.morningData.tasks.reduce((acc, cur) => cur.completed === true ? ++acc : acc, 0);
+          this.countCompletedGoals = this.morningData.goals.reduce((acc, cur) => cur.completed === true ? ++acc : acc, 0);
+          this.progress = ((this.countCompletedGoals + this.countCompletedTasks) / (this.totalGoals + this.totalTasks)) * 100;
+          console.log('countCompletedTasks', this.countCompletedTasks);
         });
       })
       .catch((error) => {

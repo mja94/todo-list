@@ -37,6 +37,11 @@ body {
 
 .content {
   background-color: var(--ion-color-light) !important;
+  padding: 1em;
+
+  ion-list {
+    background-color: var(--ion-color-light) !important;
+  }
 }
 
 ion-checkbox {

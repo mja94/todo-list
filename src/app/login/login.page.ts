@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
   login() {
     firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       .then((data) => {
-        this.navCtrl.navigateForward('dashboard');
+        this.navCtrl.navigateForward('/dashboard');
       }).catch(async (err) => {
         const toast = await this.toastController.create({
           message: 'The email address and / or password is invalid.',

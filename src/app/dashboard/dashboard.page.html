@@ -1,33 +1,54 @@
-<app-header [affirmation]="morningData.affirmation"></app-header>
+<ion-content>
+    <app-header [affirmation]="morningData.affirmation"></app-header>
+    <div class="content">
+        <h3>I am grateful for ...</h3>
+        <div class="card-slide">
+            <ion-card class="card" *ngFor="let  item of morningData.grateful; let i = index">
+                <ion-card-content>
+                    <p class="card-text">{{item}}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+        <h3>completed tasks</h3>
+        <ion-row>
+            <ion-card class="percent">
+                <ion-card-content>
+                    <circle-progress [percent]='progress' [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="5"
+                        [outerStrokeColor]="'#3880ff'" [innerStrokeColor]="'#83affc'" [animation]="true"
+                        [animationDuration]="300"></circle-progress>
+                </ion-card-content>
+            </ion-card>
+        </ion-row>
+        <ion-row>
+            <ion-col size="6">
+                <ion-card>
+                    <ion-card-content>
+                        <ion-label>Goals</ion-label>
+                        <p class="progress"><span class="highlight">{{countCompletedGoals}}</span>/{{totalGoals}}</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="6">
+                <ion-card>
+                    <ion-card-content>
+                        <ion-label>Tasks</ion-label>
+                        <p class="progress"><span class="highlight">{{countCompletedTasks}}</span>/{{totalTasks}}</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
 
-<ion-content padding="true">
-    <h3>I am grateful for ...</h3>
-    <div class="card-slide">
-        <ion-card class="card" *ngFor="let  item of morningData.grateful; let i = index">
+
+        <ion-card class="review" *ngIf="showMorningBtn">
             <ion-card-content>
-                <p class="card-text">{{item}}</p>
+                <ion-button color="primary" (click)="openMorningReviewPage()">Fill your morning routine</ion-button>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card class="review" *ngIf="showEndDayBtn">
+            <ion-card-content>
+                <ion-button color="primary">Fill your end-day review</ion-button>
             </ion-card-content>
         </ion-card>
     </div>
-
-    <h3>completed tasks</h3>
-    <ion-list lines="none" class="task-list" id="completed-task-list">
-        <ion-item class="task">
-            <ion-label>Pokémon Yellow</ion-label>
-            <ion-checkbox slot="end" checked="true"></ion-checkbox>
-        </ion-item>
-    </ion-list>
-
-
-    <ion-card class="review" *ngIf="showMorningBtn">
-        <ion-card-content>
-            <ion-button color="primary" (click)="openMorningReviewPage()">Fill your morning routine</ion-button>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card class="review" *ngIf="showEndDayBtn">
-        <ion-card-content>
-            <ion-button color="primary">Fill your end-day review</ion-button>
-        </ion-card-content>
-    </ion-card>
 </ion-content>

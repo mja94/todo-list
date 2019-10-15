@@ -1,8 +1,4 @@
 :host {
-  ion-label {
-    text-decoration: line-through;
-  }
-
   .card-slide {
     overflow-y: hidden;
     white-space: nowrap;
@@ -23,16 +19,21 @@
     display: none;
   }
 
-  //https://codepen.io/tcmulder/pen/qHIJp
-
-  .review {
+  ion-card {
     text-align: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    background-color: white;
+  }
+
+  .percent {
+    width: 100%;
   }
 
   .signup {
     text-align: right;
     padding: 5px 0;
+  }
+
+  .highlight {
+    font-size: 2em;
   }
 }

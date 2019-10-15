@@ -1,20 +1,22 @@
-<app-header [affirmation]="todo.affirmation"></app-header>
+<ion-content>
+  <app-header [affirmation]="todo.affirmation"></app-header>
+  <div class="content">
+    <h3>Goals</h3>
+    <ion-list lines="none" class="task-list" id="tasks-priorities">
+      <ion-item class="task" *ngFor="let goal of todo.goals; let i = index">
+        <span class="priority-rank">{{i+1}}</span>
+        <ion-label>{{goal.description}}</ion-label>
+        <ion-checkbox slot="end" checked={{goal.completed}}></ion-checkbox>
+      </ion-item>
+    </ion-list>
 
-<ion-content class="content" padding="true">
-  <h3>Goals</h3>
-  <ion-list lines="none" class="task-list" id="tasks-priorities">
-    <ion-item class="task" *ngFor="let goal of todo.goals; let i = index">
-      <span class="priority-rank">{{i+1}}</span>
-      <ion-label>{{goal}}</ion-label>
-      <ion-checkbox slot="end" checked="false"></ion-checkbox>
-    </ion-item>
-  </ion-list>
+    <h3>to do</h3>
+    <ion-list lines="none" class="task-list" id="tasks">
+      <ion-item class="task" *ngFor="let task of todo.tasks; let i = index">
+        <ion-label>{{task.description}}</ion-label>
+        <ion-checkbox slot="end" checked={{task.completed}} (ionChange)="onCheck(task)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
 
-  <h3>to do</h3>
-  <ion-list lines="none" class="task-list" id="tasks">
-    <ion-item class="task" *ngFor="let task of todo.tasks; let i = index">
-      <ion-label>{{task}}}</ion-label>
-      <ion-checkbox slot="end" checked="false"></ion-checkbox>
-    </ion-item>
-  </ion-list>
 </ion-content>
