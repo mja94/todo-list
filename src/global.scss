@@ -64,9 +64,24 @@ h3 {
   box-shadow: 5px 5px 8px -5px var(--ion-color-light-shade);
   border: 2px solid var(--ion-color-light-tint);
   border-radius: 5px;
-  color: var(--ion-color-medium-shade);
+
+  &.item-checkbox-checked {
+    color: var(--ion-color-medium-shade) !important;
+
+    ion-label {
+      text-decoration: line-through;
+    }
+  }
 }
 
 .item-interactive.ion-valid {
   --highlight-background: var(--ion-color-primary);
+}
+
+.header-logo {
+  ion-toolbar {
+    text-align: center;
+    font-family: 'Arvo', serif;
+  }
+
 }
