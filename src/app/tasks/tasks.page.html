@@ -22,7 +22,7 @@
     <ion-list lines="none" class="task-list" id="tasks">
       <ion-item class="task" *ngFor="let task of todo.tasks; let i = index">
         <ion-label>{{task.description}}</ion-label>
-        <ion-checkbox slot="end" checked={{task.completed}} (ionChange)="onCheck(task)"></ion-checkbox>
+        <ion-checkbox slot="end" checked={{task.completed}} (ionChange)="onCheckTasks(task)"></ion-checkbox>
       </ion-item>
     </ion-list>
   </div>

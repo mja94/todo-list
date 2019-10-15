@@ -23,9 +23,7 @@ export class TasksPage {
       .get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.todo = doc.data().morning;
-          this.affirmation = this.
-            todo.affirmation;
-          console.log('todo', this.todo);
+          this.affirmation = this.todo.affirmation;
         });
       })
       .catch((error) => {
@@ -33,15 +31,14 @@ export class TasksPage {
       });
   }
 
-  onCheck(document: firebase.firestore.QueryDocumentSnapshot) {
-    console.log('document', document.id);
-    firebase.firestore().collection('todo').doc(document.id).set({
-      completed: 'true'
-    }, {
-      merge: true
-    }).then(() => {
-      console.log('completed task!');
-    });
+  onCheckTasks(task: any) {
+    /* const checked = task.completed;
+     const db = firebase.firestore().collection('todo').doc('RQufiAaC04WRLiR6XEJy');
+     db.collection('tasks').add({ description: task.description, completed: !checked }).then(() => {
+       console.log('added', checked, task);
+     }).catch((error) => {
+       console.log('Error updating documents: ', error);
+     });*/
   }
 
 
