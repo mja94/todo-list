@@ -26,7 +26,7 @@ export class DashboardPage implements OnInit {
   async ngOnInit() {
     this.affirmation = '';
     this.getData();
-    if (this.morningData.length > 0) {
+    if (this.morningData) {
       this.showMorningBtn = false;
     } else {
       this.showMorningBtn = true;
@@ -34,7 +34,7 @@ export class DashboardPage implements OnInit {
   }
 
   openMorningReviewPage() {
-    this.navCtrl.navigateForward('tabs/morning-review');
+    this.navCtrl.navigateForward('/morning-review');
   }
 
   getData() {
@@ -42,7 +42,6 @@ export class DashboardPage implements OnInit {
     this.morningData = firebase.firestore().collection('todo')
       .where('owner', '==', this.user).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          console.log('inside', this.user);
           this.morningData = doc.data().morning;
           this.affirmation = this.morningData.affirmation;
           this.gratefulArr = this.morningData.grateful;
