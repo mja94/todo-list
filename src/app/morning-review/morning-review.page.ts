@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+
 import * as firebase from 'firebase';
 
 @Component({
@@ -32,7 +33,6 @@ export class MorningReviewPage implements OnInit {
     this.isDisabledGrateful = true;
     this.isDisabledTask = true;
   }
-
 
   addItem() {
     if (this.focusInput !== undefined) {
@@ -147,7 +147,6 @@ export class MorningReviewPage implements OnInit {
           ]
         });
         await alert.present();
-
       }).catch(async (err) => {
         const alert = await this.alertController.create({
           header: 'Warning!',

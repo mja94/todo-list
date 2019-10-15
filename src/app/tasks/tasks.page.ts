@@ -9,10 +9,11 @@ import * as firebase from 'firebase';
 export class TasksPage {
   todo: any;
   user: string;
+  affirmation: string;
 
   constructor() {
     this.user = firebase.auth().currentUser.uid;
-    console.log('userID', this.user);
+    this.affirmation = '';
     this.getData();
   }
 
@@ -22,6 +23,7 @@ export class TasksPage {
       .get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.todo = doc.data().morning;
+          this.affirmation = this.todo.affirmation;
           console.log('todo', this.todo);
         });
       })
