@@ -11,14 +11,14 @@ export class TasksPage {
   user: string;
 
   constructor() {
-    //this.user = firebase.auth().currentUser.uid;
-    //console.log('userID', this.user);
+    this.user = firebase.auth().currentUser.uid;
+    console.log('userID', this.user);
     this.getData();
   }
 
   getData() {
     this.todo = firebase.firestore().collection('todo')
-      .where('owner', '==', 'o3zeTfQjlSephIBEVZxlYFx1G6l1')
+      .where('owner', '==', this.user)
       .get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.todo = doc.data().morning;

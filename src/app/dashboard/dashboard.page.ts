@@ -21,10 +21,10 @@ export class DashboardPage {
   progress: number;
 
   constructor(public navCtrl: NavController) {
-    // this.user = firebase.auth().currentUser.uid;
-    // console.log('userID', this.user);
+    this.user = firebase.auth().currentUser.uid;
     this.getData();
-    if (this.morningData) {
+    if (this.morningData.length > 0) {
+      console.log(this.morningData);
       this.showMorningBtn = false;
     } else {
       this.showMorningBtn = true;
@@ -37,7 +37,7 @@ export class DashboardPage {
 
   getData() {
     this.morningData = firebase.firestore().collection('todo')
-      .where('owner', '==', 'o3zeTfQjlSephIBEVZxlYFx1G6l1').get().then((querySnapshot) => {
+      .where('owner', '==', this.user).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.morningData = doc.data().morning;
           this.affirmation = this.morningData.affirmation;
