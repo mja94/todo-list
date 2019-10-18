@@ -25,8 +25,8 @@ export class LoginPage implements OnInit {
   login() {
     const value = { email: this.email, password: this.password };
     this.authService.loginUser(value)
-      .then((data) => {
-        this.navCtrl.navigateForward('/dashboard');
+      .then((res) => {
+        this.navCtrl.navigateForward('/tabs(dashboard:dashboard)');
       }).catch(async (err) => {
         const toast = await this.toastController.create({
           message: 'The email address and / or password is invalid.',

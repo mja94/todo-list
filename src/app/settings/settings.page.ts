@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-import * as firebase from 'firebase';
 import { AuthenticateService } from '../services/authentication.service';
 
 
@@ -16,7 +15,7 @@ export class SettingsPage {
 
   logout() {
     this.authService.logoutUser().then(() => {
-      this.navCtrl.navigateForward('/login');
+      this.navCtrl.navigateForward('');
     })
       .catch(async (error) => {
         const toast = await this.toastController.create({

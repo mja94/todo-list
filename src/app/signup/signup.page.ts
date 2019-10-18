@@ -29,7 +29,7 @@ export class SignupPage implements OnInit {
           color: 'success'
         });
         toast.present();
-        this.navCtrl.navigateForward('/dashboard');
+        this.navCtrl.navigateForward('/tabs(dashboard:dashboard)');
       }).catch(async (err) => {
         const toast = await this.toastController.create({
           message: err,

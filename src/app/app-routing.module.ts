@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)},
-  { path: 'morning-review', loadChildren: './morning-review/morning-review.module#MorningReviewPageModule' },
-  { path: '', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  { path: 'tasks', loadChildren: './tasks/tasks.module#TasksPageModule' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'morning-review', loadChildren: './morning-review/morning-review.module#MorningReviewPageModule' },
 
 ];
 @NgModule({
