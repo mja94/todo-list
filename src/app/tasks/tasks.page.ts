@@ -32,13 +32,13 @@ export class TasksPage {
   }
 
   onCheckTasks(task: any) {
-    /* const checked = task.completed;
-     const db = firebase.firestore().collection('todo').doc('RQufiAaC04WRLiR6XEJy');
-     db.collection('tasks').add({ description: task.description, completed: !checked }).then(() => {
-       console.log('added', checked, task);
-     }).catch((error) => {
-       console.log('Error updating documents: ', error);
-     });*/
+    const checked = task.completed;
+    const db = firebase.firestore().collection('todo').doc(this.user);
+    db.collection('tasks').add({ description: task.description, completed: !checked }).then(() => {
+      console.log('added', checked, task);
+    }).catch((error) => {
+      console.log('Error updating documents: ', error);
+    });
   }
 
 
