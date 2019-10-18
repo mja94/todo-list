@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+import { AuthenticateService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,14 +13,15 @@ export class SignupPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public toastController: ToastController, public navCtrl: NavController) { }
+  constructor(public toastController: ToastController, public navCtrl: NavController, private authService: AuthenticateService) { }
 
   ngOnInit() {
 
   }
 
   signup() {
-    firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+    const value = { email: this.email, password: this.password };
+    this.authService.registerUser(value)
       .then(async (data) => {
         const toast = await this.toastController.create({
           message: 'The account was succesfully created',
@@ -27,7 +29,7 @@ export class SignupPage implements OnInit {
           color: 'success'
         });
         toast.present();
-        this.navCtrl.navigateForward('tabs/dashboard');
+        this.navCtrl.navigateForward('/dashboard');
       }).catch(async (err) => {
         const toast = await this.toastController.create({
           message: err,

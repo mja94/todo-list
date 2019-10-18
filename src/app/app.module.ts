@@ -8,26 +8,21 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
+import { AuthenticateService } from './services/authentication.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
-firebase.initializeApp({
-  apiKey: 'AIzaSyB0F9DCV7AJM5qlMKxsfkRBfhAXiIVpEaU',
-  authDomain: 'todoapp-ff5c2.firebaseapp.com',
-  databaseURL: 'https://todoapp-ff5c2.firebaseio.com',
-  projectId: 'todoapp-ff5c2',
-  storageBucket: 'todoapp-ff5c2.appspot.com',
-  messagingSenderId: '859606420504',
-  appId: '1:859606420504:web:8c56bcd0704efde41b476d',
-  measurementId: 'G-8WBRPWWFMY'
-});
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireAuthModule],
   providers: [
     StatusBar,
     SplashScreen,
+    AuthenticateService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

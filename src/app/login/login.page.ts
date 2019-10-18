@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+import { AuthenticateService } from '../services/authentication.service';
+
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,8 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public toastController: ToastController, public navCtrl: NavController) {
-    firebase.auth().onAuthStateChanged((user) => {
-      // check if the user is already login
-      if (user) {
-        this.navCtrl.navigateForward('tabs/dashboard');
-      }
-    });
+  constructor(public toastController: ToastController, public navCtrl: NavController, private authService: AuthenticateService) {
+
   }
 
   ngOnInit() {
@@ -26,9 +23,10 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+    const value = { email: this.email, password: this.password };
+    this.authService.loginUser(value)
       .then((data) => {
-        this.navCtrl.navigateForward('tabs/dashboard');
+        this.navCtrl.navigateForward('/dashboard');
       }).catch(async (err) => {
         const toast = await this.toastController.create({
           message: 'The email address and / or password is invalid.',

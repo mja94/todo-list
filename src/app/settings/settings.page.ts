@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import * as firebase from 'firebase';
+import { AuthenticateService } from '../services/authentication.service';
 
 
 @Component({
@@ -11,13 +12,12 @@ import * as firebase from 'firebase';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public toastController: ToastController) { }
+  constructor(public navCtrl: NavController, public toastController: ToastController, private authService: AuthenticateService) { }
 
   logout() {
-    firebase.auth().signOut()
-      .then(() => {
-        this.navCtrl.navigateForward('/login');
-      })
+    this.authService.logoutUser().then(() => {
+      this.navCtrl.navigateForward('/login');
+    })
       .catch(async (error) => {
         const toast = await this.toastController.create({
           message: error,
